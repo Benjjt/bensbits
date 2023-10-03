@@ -12,9 +12,10 @@ const ProductImages = ({ product }: { product: Product }) => {
   return (
     <div className="flex flex-col-reverse md:flex-row justify-center items-start w-full    gap-4 h-1/2">
       <div className="flex flex-row md:flex-col justify-start items-start gap-4 md:h-full   ">
-        {product.images.map((image) => {
+        {product.images.map((image, index) => {
           return (
             <div
+              key={index}
               onClick={() => setCurrentImage(image)}
               className={`rounded-lg hover:border-highlight border ${
                 image === currentImage ? "border-highlight" : "border-black"
